@@ -1,0 +1,42 @@
+{
+  "name": "@parkflex/themes",
+  "version": "1.0.0",
+  "description": "ParkFlex SCSS themes compiled to CSS",
+  "main": "dist/theme.css",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "src/**/*"
+  ],
+  "scripts": {
+    "build": "npm run build:css && npm run build:minify",
+    "build:css": "sass src/mytheme/theme.scss dist/theme.css --no-source-map",
+    "build:css:dev": "sass src/mytheme/theme.scss dist/theme.css --source-map",
+    "build:minify": "sass src/mytheme/theme.scss dist/theme.min.css --style=compressed --no-source-map",
+    "watch": "sass --watch src/mytheme/theme.scss dist/theme.css",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parkflex/themes.git"
+  },
+  "keywords": [
+    "parkflex",
+    "theme",
+    "scss",
+    "primereact",
+    "css"
+  ],
+  "author": "ParkFlex Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/parkflex/themes/issues"
+  },
+  "homepage": "https://github.com/parkflex/themes#readme",
+  "devDependencies": {
+    "sass": "^1.93.3"
+  },
+  "publishConfig": {
+    "@parkflex:registry": "https://npm.pkg.github.com"
+  }
+}
